@@ -10,11 +10,11 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Intake;
 
-public class ResetPneumatics extends CommandBase {
+public class ResetIntakePiston extends CommandBase {
   /**
    * Creates a new ResetPneumatics.
    */
-  public ResetPneumatics() {
+  public ResetIntakePiston() {
     // Use addRequirements() here to declare subsystem dependencies.
   }
 

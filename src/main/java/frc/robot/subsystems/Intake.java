@@ -17,8 +17,8 @@ public class Intake extends SubsystemBase {
   public static final Talon intakeTalonSR = new Talon (Constants.intakeMoterPort);
   public static final Solenoid intakeSolenoid = new Solenoid (Constants.intakeSolenoidPort);
 
-  public Intake() {
-
+  public void intake(){
+    
   }
 
   @Override
