@@ -26,7 +26,7 @@ public class IntakeIn extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    Intake.intakeTalonSR.setSpeed(1/3);
+    Intake.intakeTalonSR.setSpeed(.3333333333333333);
   }
 
   // Called once the command ends or is interrupted.

@@ -25,8 +25,7 @@ public final class Constants {
         public static final int intakeMoterPort = 0;
         public static final int leftShooterPort = 1;
         public static final int rightShooterPort = 2;
-        public static final int intakeSolenoidPort = 0;
-        public static final int shooterSolenoidLeft = 1;
-        public static final int shooterSolenoidRight = 2;
+        public static final int intakeSolenoidPort1 = 0;
+        public static final int intakeSolenoidPort2 = 1;
 
 }

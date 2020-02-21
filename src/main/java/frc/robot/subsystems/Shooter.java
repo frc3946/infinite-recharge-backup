@@ -7,7 +7,6 @@
 
 package frc.robot.subsystems;
 
-import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
@@ -16,8 +15,6 @@ public class Shooter extends SubsystemBase {
   
   public static final Talon leftShooterTalonSR = new Talon (Constants.leftShooterPort);
   public static final Talon rightShooterTalonSR = new Talon (Constants.rightShooterPort);
-  public static final Solenoid leftShooterPiston = new Solenoid (Constants.shooterSolenoidLeft);
-  public static final Solenoid rightShooterPiston = new Solenoid (Constants.shooterSolenoidRight);
 
   public Shooter() {
 

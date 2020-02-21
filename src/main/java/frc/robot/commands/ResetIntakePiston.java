@@ -26,7 +26,7 @@ public class ResetIntakePiston extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    Intake.intakeSolenoid.set(false);
+    Intake.intakeSolenoidLeft.set(false);
   }
 
   // Called once the command ends or is interrupted.
