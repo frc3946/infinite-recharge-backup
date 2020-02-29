@@ -9,7 +9,6 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Robot;
-import frc.robot.subsystems.Intake;
 
 public class IntakeIn extends CommandBase {
   /**
@@ -28,13 +27,14 @@ public class IntakeIn extends CommandBase {
   @Override
   public void execute() {
 
+    Robot.m_intake.intakeTalonSR.setSpeed(.4);
     if((Robot.m_conveyor.getUpperLeft() == false || Robot.m_conveyor.getUpperRight() == false) &&
        (Robot.m_conveyor.getLowerLeft() == true || Robot.m_conveyor.getLowerRight() == true)){
 
-      Robot.m_intake.intakeTalonSR.setSpeed(.4);
+      Robot.m_conveyor.conveyorMotor.setSpeed(.4);
     
     }else{
-      Robot.m_intake.intakeTalonSR.setSpeed(0);
+      Robot.m_conveyor.conveyorMotor.setSpeed(0);
     }
     
   }
