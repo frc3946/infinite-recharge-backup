@@ -8,14 +8,14 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.subsystems.Intake;
+import frc.robot.Robot;
 
 public class ResetIntakePiston extends CommandBase {
   /**
    * Creates a new ResetPneumatics.
    */
   public ResetIntakePiston() {
-    // Use addRequirements() here to declare subsystem dependencies.
+    addRequirements(Robot.m_intake);
   }
 
   // Called when the command is initially scheduled.
@@ -26,7 +26,7 @@ public class ResetIntakePiston extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    Intake.intakeSolenoidLeft.set(false);
+    Robot.m_intake.intakeSolenoidLeft.set(false);
   }
 
   // Called once the command ends or is interrupted.

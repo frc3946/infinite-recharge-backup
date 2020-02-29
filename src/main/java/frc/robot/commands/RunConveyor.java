@@ -9,14 +9,15 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Robot;
-import frc.robot.subsystems.Intake;
 
-public class IntakeIn extends CommandBase {
+public class RunConveyor extends CommandBase {
+  
   /**
-   * Creates a new IntakeIn.
+   * Creates a new RunConveyor.
    */
-  public IntakeIn() {
-    addRequirements(Robot.m_intake);
+  public RunConveyor() {
+    // Use addRequirements() here to declare subsystem dependencies.
+    addRequirements(Robot.m_conveyor);
   }
 
   // Called when the command is initially scheduled.
@@ -27,22 +28,13 @@ public class IntakeIn extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-
-    if((Robot.m_conveyor.getUpperLeft() == false || Robot.m_conveyor.getUpperRight() == false) &&
-       (Robot.m_conveyor.getLowerLeft() == true || Robot.m_conveyor.getLowerRight() == true)){
-
-      Robot.m_intake.intakeTalonSR.setSpeed(.4);
-    
-    }else{
-      Robot.m_intake.intakeTalonSR.setSpeed(0);
-    }
+    Robot.m_conveyor.conveyorMotor.set(.2);
     
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    Robot.m_intake.intakeTalonSR.setSpeed(0);
   }
 
   // Returns true when the command should end.

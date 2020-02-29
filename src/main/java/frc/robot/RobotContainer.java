@@ -35,6 +35,7 @@ public class RobotContainer {
     JoystickButton shoot = new JoystickButton(driverController, 2);//B button
     JoystickButton intakeDeploy = new JoystickButton(driverController, 3);//X button
     JoystickButton pistonReset = new JoystickButton(driverController, 4);//Y button
+    
     shoot.whileHeld(new Shoot());
     pcIn.whileHeld(new IntakeIn());
     pistonReset.whileHeld(new ResetIntakePiston());

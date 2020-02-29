@@ -14,9 +14,9 @@ import edu.wpi.first.wpilibj.Talon;
 
 public class Intake extends SubsystemBase {
 
-  public static final Talon intakeTalonSR = new Talon (Constants.intakeMoterPort);
-  public static final Solenoid intakeSolenoidLeft = new Solenoid (Constants.intakeSolenoidPort1);
-  public static final Solenoid intakeSolenoidRight = new Solenoid (Constants.intakeSolenoidPort2);
+  public Talon intakeTalonSR = new Talon (Constants.intakeMoterPort);
+  public Solenoid intakeSolenoidLeft = new Solenoid (Constants.intakeSolenoidPort1);
+  public Solenoid intakeSolenoidRight = new Solenoid (Constants.intakeSolenoidPort2);
 
   public void intake(){
     

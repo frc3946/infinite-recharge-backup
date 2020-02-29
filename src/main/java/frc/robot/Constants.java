@@ -22,10 +22,15 @@ public final class Constants {
         public static final int backLeftPort = 3;
         public static final int backRightPort = 4;
         public static final int xboxControllerPort = 0;
-        public static final int intakeMoterPort = 0;
+        public static final int intakeMoterPort = 3;
         public static final int leftShooterPort = 1;
         public static final int rightShooterPort = 2;
         public static final int intakeSolenoidPort1 = 0;
         public static final int intakeSolenoidPort2 = 1;
+        public static final int conveyorMotorPort = 0;
+        public static final int bottomSensorLeft = 0;
+        public static final int bottomSensorRight = 1;
+        public static final int topSensorLeft = 2; 
+        public static final int topSensorRight = 3;
 
 }

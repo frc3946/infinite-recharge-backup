@@ -13,8 +13,8 @@ import frc.robot.Constants;
 
 public class Shooter extends SubsystemBase {
   
-  public static final Talon leftShooterTalonSR = new Talon (Constants.leftShooterPort);
-  public static final Talon rightShooterTalonSR = new Talon (Constants.rightShooterPort);
+  public Talon leftShooterTalonSR = new Talon (Constants.leftShooterPort);
+  public Talon rightShooterTalonSR = new Talon (Constants.rightShooterPort);
 
   public Shooter() {
 

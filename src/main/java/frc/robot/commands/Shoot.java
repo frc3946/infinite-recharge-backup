@@ -8,14 +8,14 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.subsystems.Shooter;
+import frc.robot.Robot;
 
 public class Shoot extends CommandBase {
   /**
    * Creates a new Shoot.
    */
   public Shoot() {
-    // Use addRequirements() here to declare subsystem dependencies.
+    addRequirements(Robot.m_shooter);
   }
 
   // Called when the command is initially scheduled.
@@ -27,15 +27,17 @@ public class Shoot extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    Shooter.leftShooterTalonSR.setSpeed(1);
-    Shooter.rightShooterTalonSR.setSpeed(1);
+    Robot.m_shooter.leftShooterTalonSR.setSpeed(1);
+    Robot.m_shooter.rightShooterTalonSR.setSpeed(1);
+    Robot.m_intake.intakeTalonSR.setSpeed(.8);
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    Shooter.leftShooterTalonSR.setSpeed(0);
-    Shooter.rightShooterTalonSR.setSpeed(0);
+    Robot.m_shooter.leftShooterTalonSR.setSpeed(0);
+    Robot.m_shooter.rightShooterTalonSR.setSpeed(0);
+    Robot.m_intake.intakeTalonSR.setSpeed(0);
 
   }
 

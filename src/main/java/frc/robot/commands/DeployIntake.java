@@ -8,14 +8,14 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.subsystems.Intake;
+import frc.robot.Robot;
 
 public class DeployIntake extends CommandBase {
   /**
    * Creates a new DeployIntake.
    */
   public DeployIntake() {
-    // Use addRequirements() here to declare subsystem dependencies.
+    addRequirements(Robot.m_intake);
   }
 
   // Called when the command is initially scheduled.
@@ -26,8 +26,8 @@ public class DeployIntake extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    Intake.intakeSolenoidLeft.set(true);
-    Intake.intakeSolenoidRight.set(true);
+    Robot.m_intake.intakeSolenoidLeft.set(true);
+    Robot.m_intake.intakeSolenoidRight.set(true);
   }
 
   // Called once the command ends or is interrupted.
