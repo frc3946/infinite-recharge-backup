@@ -16,6 +16,7 @@ public class ResetIntakePiston extends CommandBase {
    */
   public ResetIntakePiston() {
     addRequirements(Robot.m_intake);
+    addRequirements(Robot.m_conveyor);
   }
 
   // Called when the command is initially scheduled.
@@ -27,6 +28,7 @@ public class ResetIntakePiston extends CommandBase {
   @Override
   public void execute() {
     Robot.m_intake.intakeSolenoidLeft.set(false);
+    Robot.m_conveyor.conveyorMotor.set(0); // TEMPORARY UNTIL BUTTON PRESS ISSUE IS FIXED
   }
 
   // Called once the command ends or is interrupted.

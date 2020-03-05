@@ -8,6 +8,7 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import frc.robot.subsystems.*;
@@ -100,7 +101,12 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void teleopPeriodic() {
-  }
+    SmartDashboard.putBoolean("lower Left Sensor Value", Robot.m_conveyor.getLowerLeft());
+    SmartDashboard.putBoolean("upper Left Sensor Value", Robot.m_conveyor.getUpperLeft());
+    SmartDashboard.putBoolean("lower Right Sensor Value", Robot.m_conveyor.getLowerRight());
+    SmartDashboard.putBoolean("upper Right Sensor Value", Robot.m_conveyor.getUpperRight());
+    CommandScheduler.getInstance().run();
+  } 
 
   @Override
   public void testInit() {

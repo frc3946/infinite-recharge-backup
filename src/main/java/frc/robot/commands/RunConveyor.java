@@ -16,7 +16,6 @@ public class RunConveyor extends CommandBase {
    * Creates a new RunConveyor.
    */
   public RunConveyor() {
-    // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(Robot.m_conveyor);
   }
 
@@ -28,13 +27,14 @@ public class RunConveyor extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    Robot.m_conveyor.conveyorMotor.set(.2);
+    Robot.m_conveyor.conveyorMotor.set(.5); //was .2, changed to .7 by chris on 3/2/2020 :)
     
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
+    Robot.m_conveyor.conveyorMotor.set(0);
   }
 
   // Returns true when the command should end.

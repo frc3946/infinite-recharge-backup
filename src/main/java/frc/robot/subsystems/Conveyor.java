@@ -15,26 +15,27 @@ import edu.wpi.first.wpilibj.Talon;
 public class Conveyor extends SubsystemBase {
   
   public Talon conveyorMotor = new Talon (Constants.conveyorMotorPort);
-  private DigitalInput lowerSensorLeft = new DigitalInput (Constants.bottomSensorLeft);
-  private DigitalInput lowerSensorRight = new DigitalInput (Constants.bottomSensorRight);
-  private DigitalInput upperSensorLeft = new DigitalInput (Constants.topSensorLeft);
-  private DigitalInput upperSensorRight = new DigitalInput (Constants.topSensorRight);
+   private DigitalInput lowerSensorLeft = new DigitalInput (Constants.bottomSensorLeft);    
+   private DigitalInput lowerSensorRight = new DigitalInput (Constants.bottomSensorRight);  
+   private DigitalInput upperSensorLeft = new DigitalInput (Constants.topSensorLeft);       
+   private DigitalInput upperSensorRight = new DigitalInput (Constants.topSensorRight);     
   
-  public boolean getLowerLeft(){
-    return lowerSensorLeft.get();
-  }
 
-  public boolean getLowerRight(){
-    return lowerSensorRight.get();
-  }
+   public boolean getLowerLeft(){
+     return lowerSensorLeft.get();
+   }
 
-  public boolean getUpperLeft(){
-    return upperSensorLeft.get();
-  }
+   public boolean getLowerRight(){
+     return lowerSensorRight.get();
+   }
 
-  public boolean getUpperRight(){
-    return upperSensorRight.get();
-  }
+   public boolean getUpperLeft(){
+     return upperSensorLeft.get();
+   }
+
+   public boolean getUpperRight(){
+     return upperSensorRight.get();
+   }
 
 
   @Override

@@ -8,6 +8,7 @@ import frc.robot.commands.ArcadeDrive;
 import frc.robot.commands.DeployIntake;
 import frc.robot.commands.IntakeIn;
 import frc.robot.commands.ResetIntakePiston;
+import frc.robot.commands.RunConveyor;
 import frc.robot.commands.Shoot;
 import frc.robot.subsystems.Drivetrain;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
@@ -35,11 +36,13 @@ public class RobotContainer {
     JoystickButton shoot = new JoystickButton(driverController, 2);//B button
     JoystickButton intakeDeploy = new JoystickButton(driverController, 3);//X button
     JoystickButton pistonReset = new JoystickButton(driverController, 4);//Y button
-    
+    JoystickButton conveyor = new JoystickButton(driverController, 5); //Left Bumper\
+
     shoot.whileHeld(new Shoot());
     pcIn.whileHeld(new IntakeIn());
     pistonReset.whileHeld(new ResetIntakePiston());
     intakeDeploy.whileHeld(new DeployIntake());
+    conveyor.whileHeld(new RunConveyor());
   }
 
 

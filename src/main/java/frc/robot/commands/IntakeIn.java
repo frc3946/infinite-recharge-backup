@@ -7,13 +7,13 @@
 
 package frc.robot.commands;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Robot;
 
 public class IntakeIn extends CommandBase {
-  /**
-   * Creates a new IntakeIn.
-   */
+   boolean upperLeft, upperRight, lowerLeft, lowerRight;
+   String test;
   public IntakeIn() {
     addRequirements(Robot.m_intake);
   }
@@ -26,15 +26,24 @@ public class IntakeIn extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
+    upperLeft = Robot.m_conveyor.getUpperLeft();
+    upperRight = Robot.m_conveyor.getUpperRight();
+    lowerLeft = Robot.m_conveyor.getLowerLeft();
+    lowerRight = Robot.m_conveyor.getLowerRight();
 
-    Robot.m_intake.intakeTalonSR.setSpeed(.4);
-    if((Robot.m_conveyor.getUpperLeft() == false || Robot.m_conveyor.getUpperRight() == false) &&
-       (Robot.m_conveyor.getLowerLeft() == true || Robot.m_conveyor.getLowerRight() == true)){
+    Robot.m_intake.intakeTalonSR.setSpeed(1);
+    test = "method";
+    SmartDashboard.putString("test", test);
 
-      Robot.m_conveyor.conveyorMotor.setSpeed(.4);
-    
-    }else{
-      Robot.m_conveyor.conveyorMotor.setSpeed(0);
+     if(upperLeft == true  ){//|| upperRight == true*//*|| lowerRight == false*/
+      test = "if";
+      SmartDashboard.putString("test", test);  
+      Robot.m_conveyor.conveyorMotor.setSpeed(.5);
+     }
+    else {
+      test = "else";
+      SmartDashboard.putString("test", test);
+        Robot.m_conveyor.conveyorMotor.setSpeed(0);
     }
     
   }
@@ -43,6 +52,7 @@ public class IntakeIn extends CommandBase {
   @Override
   public void end(boolean interrupted) {
     Robot.m_intake.intakeTalonSR.setSpeed(0);
+    Robot.m_conveyor.conveyorMotor.setSpeed(0);
   }
 
   // Returns true when the command should end.
