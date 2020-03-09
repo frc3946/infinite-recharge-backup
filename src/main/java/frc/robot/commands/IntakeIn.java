@@ -7,7 +7,6 @@
 
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Robot;
 
@@ -31,18 +30,15 @@ public class IntakeIn extends CommandBase {
     lowerLeft = Robot.m_conveyor.getLowerLeft();
     lowerRight = Robot.m_conveyor.getLowerRight();
 
-    Robot.m_intake.intakeTalonSR.setSpeed(1);
+    Robot.m_intake.intakeTalonSR.setSpeed(.5);
     test = "method";
-    SmartDashboard.putString("test", test);
 
-     if(upperLeft == true  ){//|| upperRight == true*//*|| lowerRight == false*/
-      test = "if";
-      SmartDashboard.putString("test", test);  
+     if(upperLeft == true && lowerRight == false ){//|| upperRight == true*//*|| */
+      test = "if"; 
       Robot.m_conveyor.conveyorMotor.setSpeed(.5);
      }
     else {
       test = "else";
-      SmartDashboard.putString("test", test);
         Robot.m_conveyor.conveyorMotor.setSpeed(0);
     }
     
