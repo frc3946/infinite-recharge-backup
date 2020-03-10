@@ -32,5 +32,9 @@ public final class Constants {
         public static final int bottomSensorRight = 1;
         public static final int topSensorLeft = 2; 
         public static final int topSensorRight = 3;
+        public static final int raiseClimbPistonLeft = 2;
+        public static final int raiseClimbPistonRight = 3;
+        public static final int climbPistonLeft = 4;
+        public static final int climbPistonRight = 5;
 
 }
