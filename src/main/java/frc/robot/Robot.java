@@ -24,6 +24,7 @@ public class Robot extends TimedRobot {
   public static final Conveyor m_conveyor = new Conveyor();
   public static final Intake m_intake = new Intake();
   public static final Shooter m_shooter = new Shooter();
+  public static final ClimbMech m_climbMech = new ClimbMech();
 
   private RobotContainer m_robotContainer;
 
@@ -59,6 +60,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void disabledInit() {
+    
   }
 
   @Override
@@ -93,6 +95,8 @@ public class Robot extends TimedRobot {
     // this line or comment it out.
     if (m_autonomousCommand != null) {
       m_autonomousCommand.cancel();
+
+
     }
   }
 
@@ -105,6 +109,9 @@ public class Robot extends TimedRobot {
     SmartDashboard.putBoolean("upper Left Sensor Value", Robot.m_conveyor.getUpperLeft());
     SmartDashboard.putBoolean("lower Right Sensor Value", Robot.m_conveyor.getLowerRight());
     SmartDashboard.putBoolean("upper Right Sensor Value", Robot.m_conveyor.getUpperRight());
+    SmartDashboard.putBoolean("climb extended", Robot.m_climbMech.checkClimb);
+    SmartDashboard.putNumber("primitive timer", Robot.m_climbMech.primitiveTimer);
+    SmartDashboard.putNumber("climb stage", Robot.m_climbMech.climbStage);
     CommandScheduler.getInstance().run();
   } 
 

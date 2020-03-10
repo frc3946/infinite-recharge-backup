@@ -17,6 +17,9 @@ public class ClimbMech extends SubsystemBase {
   public Solenoid climbPistonRaiserRight = new Solenoid(Constants.raiseClimbPistonRight);
   public Solenoid climbPistonLeft = new Solenoid(Constants.climbPistonLeft);
   public Solenoid climbPistonRight = new Solenoid(Constants.climbPistonRight);
+  public boolean checkClimb = false;
+  public int primitiveTimer = 0;
+  public int climbStage = 0;
   
   public ClimbMech() {
 
@@ -24,6 +27,5 @@ public class ClimbMech extends SubsystemBase {
 
   @Override
   public void periodic() {
-    // This method will be called once per scheduler run
   }
 }
