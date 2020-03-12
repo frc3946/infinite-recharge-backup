@@ -29,7 +29,7 @@ public class Shoot extends CommandBase {
   public void execute() {
     Robot.m_shooter.leftShooterTalonSR.setSpeed(1);
     Robot.m_shooter.rightShooterTalonSR.setSpeed(1);
-    Robot.m_intake.intakeTalonSR.setSpeed(.8);
+    Robot.m_conveyor.conveyorMotor.setSpeed(.8);
   }
 
   // Called once the command ends or is interrupted.
@@ -37,7 +37,7 @@ public class Shoot extends CommandBase {
   public void end(boolean interrupted) {
     Robot.m_shooter.leftShooterTalonSR.setSpeed(0);
     Robot.m_shooter.rightShooterTalonSR.setSpeed(0);
-    Robot.m_intake.intakeTalonSR.setSpeed(0);
+    Robot.m_conveyor.conveyorMotor.setSpeed(0);
 
   }
 
